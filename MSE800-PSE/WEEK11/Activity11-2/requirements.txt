@@ -1,0 +1,9 @@
+# Engineering Calculator Requirements
+# No external dependencies required - uses Python standard library only
+
+# For development and testing (optional):
+# coverage>=6.0  # For test coverage reporting
+# flake8>=4.0    # For code linting
+# black>=22.0    # For code formatting
+
+# Python version requirement: 3.6+ 
