@@ -1,3 +1,15 @@
+"""
+Activity Week11-3: Understanding Unit Testing
+
+TASK OBJECTIVES:
+1. Describe what each test method is checking
+2. Run the code and interpret the results  
+3. Add new test case that checks if '123'.isdigit() returns True
+4. See what happens when assertions fail by changing expected values
+
+This code demonstrates unittest framework with string method testing.
+"""
+
 import unittest
 
 
@@ -24,7 +36,8 @@ class TestStringMethods(unittest.TestCase):
     def test_isdigit(self):
         # NEW TEST: Tests if string contains only digits
         self.assertTrue('123'.isdigit())     # '123' has only digits = True
-        self.assertFalse('12a'.isdigit())    # '12a' has letter 'a' = False
+        # '12a' is NOT all digits (has letter 'a'), so isdigit() returns False
+        self.assertFalse('12a'.isdigit())    # Test expects False = passes ✅
         self.assertFalse(''.isdigit())       # Empty string = False
 
 
