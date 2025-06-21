@@ -70,26 +70,23 @@ class ImageProcessor(FileProcessor):
             plt.axis('off')
             plt.show()
 
-            # Resize and normalize the image for training
-            img = img.resize((32, 32))  # Resize to 32x32 like CIFAR-10
-            img_array = np.array(img) / 255.0  # Normalize
-            img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+            img = img.resize((32, 32))  
+            img_array = np.array(img) / 255.0 
+            img_array = np.expand_dims(img_array, axis=0) 
 
-            # Create a dummy label (e.g., class 0)
             label = np.array([0])
 
-            # Define a simple CNN model
             model = tf.keras.Sequential([
                 tf.keras.layers.Conv2D(16, (3, 3), activation='relu', input_shape=(32, 32, 3)),
                 tf.keras.layers.MaxPooling2D((2, 2)),
                 tf.keras.layers.Flatten(),
                 tf.keras.layers.Dense(32, activation='relu'),
-                tf.keras.layers.Dense(1, activation='sigmoid')  # Binary output
+                tf.keras.layers.Dense(1, activation='sigmoid')
             ])
 
             model.compile(optimizer='adam',
-                          loss='binary_crossentropy',
-                          metrics=['accuracy'])
+                        loss='binary_crossentropy',
+                        metrics=['accuracy'])
 
             print("\nTraining the model on the single loaded image (dummy label)...")
             model.fit(img_array, label, epochs=3, verbose=2)
@@ -125,11 +122,11 @@ def main():
             processor = ParquetProcessor(file_path)
             processor.process()
         elif choice == '4':
-            file_path = input("Enter path to Image file (e.g. .jpg, .png): ").strip()
+            file_path = show.input("Enter path to Image file: ").strip()
             processor = ImageProcessor(file_path)
             processor.process()
         elif choice == '5':
-            print("Exiting program. Goodbye!")
+            print("See ya Later, Alligator!")
             break
         else:
             print("Invalid choice. Please enter 1 to 5.")

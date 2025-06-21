@@ -1,10 +1,10 @@
 
 import pandas as pd
 
-def count_records_in_parquet("WEEK4\ACTIVITY_04MAY25\Sample_data_2.parquet"):
+def count_records_in_parquet(WEEK4\ACTIVITY_04MAY25\Sample_data_2.parquet):
     try:
     
-        df = pd.read_parquet("WEEK4\ACTIVITY_04MAY25\Sample_data_2.parquet")
+        df = pd.read_parquet(WEEK4\ACTIVITY_04MAY25\Sample_data_2.parquet)
         
        
         num_records = len(df)
