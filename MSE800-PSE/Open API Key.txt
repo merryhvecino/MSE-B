@@ -1,0 +1,8 @@
+Open API Key
+
+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
+
+
+llama API:
+
+6806d187c9efdb73cfcb9bfd6db3f816e5c57a9400271d8aa49eb929d27ff9f5
